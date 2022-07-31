@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Import Success</title>
+</head>
+
+<body>
+    <h2>Your data has been imported!</h2>
+    <div>
+        {% if products %}
+        <h2>Products:</h2>
+        {% load humanize %}
+        {% for product in products %}
+        <div>{{forloop.counter}}. {{ product.name }} : {{ product.category.name }} : KES {{ product.price|intcomma }}
+        </div>
+        {% endfor %}
+        {% endif %}
+    </div>
+</body>
+
+</html>

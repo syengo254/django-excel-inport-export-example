@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Import Data</title>
+</head>
+
+<body>
+    <h4>Import your data here:</h4>
+    <form action="" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div>
+            <label for="file_id">Your File:</label>
+            <input type="file" name="file" id="file_id" accept=".csv, .xls, .xlsx" required />
+        </div>
+        <div>
+            <button type="submit">Upload</button>
+        </div>
+    </form>
+</body>
+
+</html>

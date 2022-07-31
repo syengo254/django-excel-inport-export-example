@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .buttons {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: auto;
+            width: 300px;
+            gap: 1rem;
+        }
+
+        .buttons>a {
+            text-decoration: none;
+            display: block;
+            padding: .4rem .8rem;
+            background: #0000ee;
+            color: white;
+            border-radius: 3px;
+            box-shadow: 1px 1px 2px rgba(0, 0, 0, .3);
+        }
+
+    </style>
+    <title>Export Data</title>
+</head>
+
+<body>
+    <h3>You can export your data:</h3>
+    <p>Click on one of the buttons below to download in specified formats</p>
+    <div class="buttons">
+        <a href="{% url 'export' %}?obj=products&format=xls">Products(.xls)</a>
+        <a href="{% url 'export' %}?obj=products&format=csv">Products(.csv)</a>
+        <a href="{% url 'export' %}?obj=categories&format=xls">Categories(.xls)</a>
+        <a href="{% url 'export' %}?obj=categories&format=csv">Categories(.csv)</a>
+    </div>
+</body>
+
+</html>
